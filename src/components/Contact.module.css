@@ -42,16 +42,23 @@
 }
 
 .phoneNumber {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: var(--color-primary);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: var(--transition);
+}
+
+.phoneInfo:hover .phoneNumber {
+  color: var(--color-secondary);
+  transform: scale(1.05);
 }
 
 .whatsappButton {
   background-color: var(--color-whatsapp);
   color: white;
   padding: 1.25rem 2.5rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-lg);
   font-size: 1.1rem;
   font-weight: 600;
   transition: var(--transition);
@@ -60,13 +67,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.whatsappButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.whatsappButton:hover::before {
+  width: 400px;
+  height: 400px;
 }
 
 .whatsappButton:hover {
   background-color: var(--color-whatsapp-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.whatsappButton:active {
+  transform: translateY(-1px);
 }
 
 .floatingButton {

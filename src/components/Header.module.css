@@ -3,14 +3,16 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--color-bg);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   z-index: 1000;
   transition: var(--transition);
 }
 
 .header.scrolled {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .container {
@@ -25,9 +27,16 @@
 
 .logo {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-primary);
   white-space: nowrap;
+  letter-spacing: -0.01em;
+  transition: var(--transition);
+}
+
+.logo:hover {
+  color: var(--color-secondary);
+  transform: scale(1.02);
 }
 
 .nav {
@@ -71,12 +80,33 @@
   font-weight: 600;
   transition: var(--transition);
   white-space: nowrap;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.whatsappButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.whatsappButton:hover::before {
+  width: 200px;
+  height: 200px;
 }
 
 .whatsappButton:hover {
   background-color: var(--color-whatsapp-hover);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--shadow-md);
 }
 
 .menuToggle {

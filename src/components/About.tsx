@@ -32,6 +32,7 @@ const About = () => {
             src="/images/ruth.jpg"
             alt="Ruth de Carvalho Lima"
             className={styles.image}
+            loading="lazy"
           />
         </div>
       </div>
