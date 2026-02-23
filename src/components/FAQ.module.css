@@ -1,0 +1,120 @@
+.faq {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--color-bg-light);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.faqQuestion {
+  width: 100%;
+  padding: var(--spacing-md);
+  text-align: left;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
+  transition: var(--transition);
+}
+
+.faqQuestion:hover {
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+}
+
+.faqQuestion.open {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.faqQuestion.open .icon {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.faqAnswer {
+  padding: 0 var(--spacing-md) var(--spacing-md);
+  animation: slideDown 0.3s ease;
+}
+
+.faqAnswer p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .faq {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .faqQuestion {
+    font-size: 1rem;
+    padding: var(--spacing-sm);
+  }
+
+  .faqAnswer {
+    padding: 0 var(--spacing-sm) var(--spacing-sm);
+  }
+
+  .faqAnswer p {
+    font-size: 0.95rem;
+  }
+}
